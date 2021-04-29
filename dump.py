@@ -120,7 +120,7 @@ def on_message(message, data):
                 scp.get(scp_from, scp_to)
 
             chmod_dir = os.path.join(PAYLOAD_PATH, os.path.basename(dump_path))
-            chmod_args = ('chmod', '655', chmod_dir)
+            chmod_args = ('attrib', '-r', chmod_dir)
             try:
                 subprocess.check_call(chmod_args)
             except subprocess.CalledProcessError as err:
@@ -138,7 +138,7 @@ def on_message(message, data):
                 scp.get(scp_from, scp_to, recursive=True)
 
             chmod_dir = os.path.join(PAYLOAD_PATH, os.path.basename(app_path))
-            chmod_args = ('chmod', '755', chmod_dir)
+            chmod_args = ('attrib', '-r', chmod_dir)
             try:
                 subprocess.check_call(chmod_args)
             except subprocess.CalledProcessError as err:
