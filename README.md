@@ -1,4 +1,4 @@
-# frida-ios-dump
+# frida-ios-dump For Windows
 Pull a decrypted IPA from a jailbroken device
 
 
